@@ -1,0 +1,161 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    display: block;
+    font-family :Arial, Helvetica, sans-serif;
+}
+
+header{
+    display:flex;
+    justify-content:space-between; 
+    align-items:center;
+    background-color:white;
+}
+nav{
+   padding:14px 16px; 
+   background-color:white;
+   display:inline-block;
+   
+}
+
+body{
+    display: flex;
+}
+giftcardstore{
+    background-color:rgb(255,255,255);
+}
+
+
+logo{
+    display: block;
+    background-image: url(logo.png);
+    height:100px;
+    width:100px;
+    background-color:red;
+    
+}
+giftCard{
+    background-color : rgb(236,220,212) ;
+}
+giftcardimage{
+    background-image : url("giftcard.webp");
+    width : 1440px; 
+    height : 650px;
+    margin-left : 35px;
+    background-repeat:no-repeat;
+}
+title{
+    display:flex;
+    align-items:flex-end;
+    color:white;
+    font-size : 40px;
+    padding-top : 450px;
+    
+}
+
+giftcardimage description{
+    /* color:white; */
+    font-size : 20px;
+    border : 1 px solid white;
+    background-color:white;
+    padding:5px;
+    background-size:contain;
+    width:250px;
+    display:flex;
+    align-items:flex-end;
+    margin-top : 10px;
+    margin-left:5px;
+}
+
+
+#spotify{
+    background-image:url("visacard.png");
+}
+#googleplay{
+    background-image : url("googlecard.png");
+}
+#ebay{
+    background-image : url("ebay.png");
+}
+#ultrabeauty{
+    background-image : url("ultrabeauty.png");
+}
+#playstation{
+    background-image : url("playstation.png");
+}
+#TreatYourself{
+    background-image : url("TreatYourself.png");
+}
+#MakeAWish{
+    background-image : url("MakeAWish.png");
+}
+#MasterCard{
+    background-image : url("MasterCardVirtualAccount.png");
+}
+#wayfair{
+    background-image : url("wayfair.png");
+}
+#ThankYou{
+    background-image : url("ThankYou.png");
+}
+#Roblox{
+    background-image : url("Roblox.png");
+}
+#happygrand{
+    background-image : url("happygrand.jpg");
+}
+
+giftCard {
+    height: 400px;
+    width: 306px;
+    /* border: 1px red solid; */
+    display: block;
+    margin-left : 40px;
+    margin-bottom : 30px;
+    border-radius:10px;
+}
+
+cardImage {
+    height: 195px;
+    width: 305px;
+    /* border: 2px black solid; */
+}
+giftcards{
+    display:flex;
+    flex-wrap:wrap;
+    
+}
+storename{
+    display:block;
+}
+header div{
+    display :flex;
+    align-items:center;
+}
+header div logo {
+    margin-right:20px;
+    
+}
+usercredintals{
+    display:flex;
+}
+usercredintals login{
+   margin-right:30px;
+}
+feature{
+    display:flex;
+}
+footer{
+    display:flex;
+    justify-content: space-around;
+    background-color:black; 
+}
+footer info,label{
+    margin-bottom:10px;
+    color:white;
+}
+footer label{
+    font-size:25px;
+    
+}

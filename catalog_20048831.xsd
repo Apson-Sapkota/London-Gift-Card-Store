@@ -1,0 +1,206 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="logo" type="xs:string"/>
+  <xs:element name="storename" type="xs:string"/>
+  <xs:element name="nav" type="xs:string"/>
+  <xs:element name="search" type="xs:string"/>
+  <xs:element name="login" type="xs:string"/>
+  <xs:element name="register" type="xs:string"/>
+  <xs:element name="div">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="logo"/>
+        <xs:element ref="storename"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="nav-bar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="nav" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="usercredintals">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="search"/>
+        <xs:element ref="login"/>
+        <xs:element ref="register"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="title" type="xs:string"/>
+  <xs:element name="description" type="xs:string"/>
+  <xs:element name="propertyname" type="xs:string"/>
+  <xs:element name="card_id" type="xs:string"/>
+  <xs:element name="name" type="xs:string"/>
+  <xs:element name="cost">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="currency" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="numberofusers" type="xs:byte"/>
+  <xs:element name="discount" type="xs:string"/>
+  <xs:element name="paymentmethod">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="supporting" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="feature">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="propertyname"/>
+        <xs:element ref="paymentmethod" minOccurs="0"/>
+        <xs:element ref="card_id" minOccurs="0"/>
+        <xs:element ref="name" minOccurs="0"/>
+        <xs:element ref="cost" minOccurs="0"/>
+        <xs:element ref="numberofusers" minOccurs="0"/>
+        <xs:element ref="discount" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="startdate" type="xs:date"/>
+  <xs:element name="enddate" type="xs:date"/>
+  <xs:element name="paymentmethods">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="feature" minOccurs="0"/>
+        <xs:element ref="propertyname" minOccurs="0"/>
+        <xs:element ref="startdate" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="card">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:element ref="feature"/>
+        <xs:element ref="paymentmethods"/>
+      </xs:choice>
+      <xs:attribute type="xs:string" name="type" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cardImage">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="id" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cardDescription">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="card"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="giftCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="cardImage"/>
+        <xs:element ref="cardDescription"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="giftcards">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="giftCard" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="label" type="xs:string"/>
+  <xs:element name="info" type="xs:string"/>
+  <xs:element name="About">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="label"/>
+        <xs:element ref="info" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Support">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="label"/>
+        <xs:element ref="info" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="legal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="label"/>
+        <xs:element ref="info" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Connect">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="label"/>
+        <xs:element ref="info" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="header">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="div"/>
+        <xs:element ref="nav-bar"/>
+        <xs:element ref="usercredintals"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="giftcardimage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="title"/>
+        <xs:element ref="description"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="body">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="giftcards"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="footer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="About"/>
+        <xs:element ref="Support"/>
+        <xs:element ref="legal"/>
+        <xs:element ref="Connect"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="giftcardstore">
+    <xs:annotation>
+      <xs:documentation> 
+    Name: Apson Sapkota
+    londonmet: 3008
+    collegeid: 
+</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="header"/>
+        <xs:element ref="giftcardimage"/>
+        <xs:element ref="body"/>
+        <xs:element ref="footer"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
